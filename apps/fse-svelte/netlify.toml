@@ -4,5 +4,5 @@
 [build]
   base = "apps/fse-svelte/"
   publish = "./dist/"
-  command = "npx pnpm@6 install --store-dir=.pnpm --frozen-lockfile && npm run build"
+  command = "npx pnpm@6 install --store-dir=.pnpm --frozen-lockfile && npm run svelte-build"
   

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "svelte-build": "pnpm --filter apps/fse-svelte build",
     "build": "vite build",
     "preview": "vite preview"
   },
