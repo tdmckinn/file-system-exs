@@ -1,9 +1,8 @@
 [build.environment]
   NODE_VERSION = "16"
   NPM_FLAGS = "--version" # prevent Netlify npm install
-
 [build]
   base = "apps/fse-svelte/"
-  publish = "apps/fse-svelte/dist/"
+  publish = "./dist/"
   command = "npx pnpm@6 install --store-dir=.pnpm --frozen-lockfile && npx pnpm@6 build"
   
