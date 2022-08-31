@@ -2,11 +2,8 @@
   import svelteLogo from "./assets/svelte.svg";
   import { fileSystemExplorerStore } from "shared-fse-data";
   import { onMount } from "svelte";
-  import FileSystemExplorer from "./lib/FileSystemExplorer.svelte";
-
-  onMount(async () => {
-    await fileSystemExplorerStore.fetchFileExploreContents();
-  });
+  import FileSystemExplorer from "./components/FileSystemExplorer.svelte";
+  import { writable } from "svelte/store";
 </script>
 
 <main>
@@ -18,7 +15,9 @@
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </header>
-  <FileSystemExplorer />
+  {#await fileSystemExplorerStore.fetchFileExploreContents() then}
+    <FileSystemExplorer />
+  {/await}
 </main>
 
 <style>
